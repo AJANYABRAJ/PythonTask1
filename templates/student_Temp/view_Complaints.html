@@ -1,0 +1,31 @@
+{% extends 'student_Temp/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card">
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <a class="btn btn-primary me-md-2" type="submit" href="{% url 'add_Complaints' %}">Add Complaint</a>
+  </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">sl_no</th>
+      <th scope="col">User</th>
+      <th scope="col">Complaints</th>
+      <th scope="col">Date</th>
+<!--      <th scope="col"></th>-->
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{request.user}}</td>
+      <td>{{i.complaint}}</td>
+      <td>{{i.date}}</td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

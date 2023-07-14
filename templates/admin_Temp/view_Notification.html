@@ -1,0 +1,29 @@
+{% extends 'admin_Temp/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-primary" href="{% url 'add_Notification' %}" type="button">Add Notification</a>
+    </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">sl_no</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Description</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.subject}}</td>
+      <td>{{i.description}}</td>
+      <td>{{i.date}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

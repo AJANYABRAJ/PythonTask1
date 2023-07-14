@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card">
+<table class="table">
+  <thead>
+    <tr>
+<!--      <th scope="col">sl_no</th>-->
+      <th scope="col">Name</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">roll_no</th>
+      <th scope="col">image</th>
+      <th scope="col">college_name</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+<!--      <th scope="row">{{forloop.counter}}</th>-->
+      <td>{{i.name}}</td>
+      <td>{{i.username}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.rollno}}</td>
+      <td>{{i.image}}</td>
+      <td>{{i.collegename}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'admin_Temp/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card">
+<table class="table">
+  <thead>
+    <tr>
+<!--      <th scope="col">sl_no</th>-->
+      <th scope="col">Name</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+<!--      <th scope="row">{{forloop.counter}}</th>-->
+      <td>{{i.name}}</td>
+      <td>{{i.username}}</td>
+      <td>{{i.email}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
